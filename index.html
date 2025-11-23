@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechStore - Sua Loja de Tecnologia Premium</title>
+  <meta name="description"
+    content="Descubra os melhores produtos de tecnologia com design premium e qualidade excepcional. Fones de ouvido, smartwatches, teclados e muito mais.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo" id="logoBtn">TechStore</a>
+        <div class="header-actions">
+          <button class="btn btn-secondary" id="viewProductsBtn">
+            Ver Produtos
+          </button>
+          <button class="btn btn-secondary" id="loginBtn">
+            👤 <span id="userNameDisplay">Entrar</span>
+          </button>
+          <button class="btn btn-primary cart-btn" id="cartBtn">
+            🛒 Carrinho
+            <span class="cart-badge hidden" id="cartBadge">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="heroSection">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Tecnologia Premium ao Seu Alcance</h1>
+        <p>Descubra nossa coleção exclusiva de produtos tecnológicos de alta qualidade, selecionados especialmente para
+          você.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="heroViewProductsBtn">
+            🚀 Explorar Produtos
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container" style="margin-top: 80px;">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚚</div>
+          <h3>Frete Grátis</h3>
+          <p>Em compras acima de R$ 500,00 para todo o Brasil</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Pagamento Seguro</h3>
+          <p>Seus dados protegidos com criptografia de ponta</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Entrega Rápida</h3>
+          <p>Receba seus produtos em até 5 dias úteis</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎁</div>
+          <h3>Garantia Estendida</h3>
+          <p>12 meses de garantia em todos os produtos</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="container" style="margin-top: 80px;">
+      <div class="about-section">
+        <h2>Sobre a TechStore</h2>
+        <p>Somos uma loja especializada em produtos tecnológicos premium, com mais de 10 anos de experiência no mercado.
+          Nossa missão é oferecer os melhores produtos com qualidade excepcional e atendimento personalizado.</p>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">50k+</div>
+            <div class="stat-label">Clientes Satisfeitos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Produtos Premium</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Avaliação Positiva</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Suporte Online</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section hidden" id="productsSection">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nossos Produtos</h2>
+        <p>Explore nossa seleção premium de tecnologia</p>
+      </div>
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Detail Section -->
+  <section class="product-detail hidden" id="productDetailSection">
+    <div class="container">
+      <div class="detail-grid">
+        <div>
+          <img src="" alt="" class="detail-image" id="detailImage">
+        </div>
+        <div class="detail-content">
+          <p class="product-id" id="detailId">ID: #000000</p>
+          <h2 id="detailName">Product Name</h2>
+          <p class="detail-price" id="detailPrice">R$ 0,00</p>
+          <p class="detail-description" id="detailDescription">Product description</p>
+          <div class="detail-actions">
+            <button class="btn btn-accent" id="addToCartBtn">
+              🛒 Adicionar ao Carrinho
+            </button>
+            <button class="btn btn-secondary" id="seeMoreProductsBtn">
+              ← Ver Mais Produtos
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Section -->
+  <section class="cart-section hidden" id="cartSection">
+    <div class="container">
+      <div class="section-header">
+        <h2>Carrinho de Compras</h2>
+        <p>Revise seus itens antes de finalizar</p>
+      </div>
+
+      <div id="cartContent">
+        <!-- Cart items will be shown here or empty state -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkout Section -->
+  <section class="checkout-section hidden" id="checkoutSection">
+    <div class="container">
+      <div class="section-header">
+        <h2>Finalizar Compra</h2>
+        <p>Preencha seus dados para concluir o pedido</p>
+      </div>
+
+      <div class="checkout-container">
+        <div class="checkout-form">
+          <div class="form-section">
+            <h3>📍 Endereço de Entrega</h3>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="deliveryCep">CEP</label>
+                <input type="text" id="deliveryCep" placeholder="00000-000" maxlength="9" required>
+              </div>
+              <div class="form-group full-width">
+                <label for="deliveryStreet">Rua</label>
+                <input type="text" id="deliveryStreet" placeholder="Nome da rua" required>
+              </div>
+              <div class="form-group">
+                <label for="deliveryNumber">Número</label>
+                <input type="text" id="deliveryNumber" placeholder="123" required>
+              </div>
+              <div class="form-group">
+                <label for="deliveryComplement">Complemento</label>
+                <input type="text" id="deliveryComplement" placeholder="Apto 45">
+              </div>
+              <div class="form-group">
+                <label for="deliveryNeighborhood">Bairro</label>
+                <input type="text" id="deliveryNeighborhood" placeholder="Centro" required>
+              </div>
+              <div class="form-group">
+                <label for="deliveryCity">Cidade</label>
+                <input type="text" id="deliveryCity" placeholder="São Paulo" required>
+              </div>
+              <div class="form-group">
+                <label for="deliveryState">Estado</label>
+                <select id="deliveryState" required>
+                  <option value="">Selecione</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <!-- Add more states as needed -->
+                </select>
+              </div>
+            </div>
+
+            <div class="form-checkbox">
+              <input type="checkbox" id="sameAsBilling" checked>
+              <label for="sameAsBilling">Usar o mesmo endereço para cobrança</label>
+            </div>
+          </div>
+
+          <div class="form-section hidden" id="billingSection">
+            <h3>💳 Endereço de Cobrança</h3>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="billingCep">CEP</label>
+                <input type="text" id="billingCep" placeholder="00000-000" maxlength="9">
+              </div>
+              <div class="form-group full-width">
+                <label for="billingStreet">Rua</label>
+                <input type="text" id="billingStreet" placeholder="Nome da rua">
+              </div>
+              <div class="form-group">
+                <label for="billingNumber">Número</label>
+                <input type="text" id="billingNumber" placeholder="123">
+              </div>
+              <div class="form-group">
+                <label for="billingComplement">Complemento</label>
+                <input type="text" id="billingComplement" placeholder="Apto 45">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>💳 Pagamento</h3>
+            <div class="payment-methods">
+              <label class="payment-method">
+                <input type="radio" name="paymentMethod" value="credit" checked>
+                <div class="payment-option">
+                  <span class="payment-icon">💳</span>
+                  <span>Cartão de Crédito</span>
+                </div>
+              </label>
+              <label class="payment-method">
+                <input type="radio" name="paymentMethod" value="debit">
+                <div class="payment-option">
+                  <span class="payment-icon">💰</span>
+                  <span>Cartão de Débito</span>
+                </div>
+              </label>
+              <label class="payment-method">
+                <input type="radio" name="paymentMethod" value="pix">
+                <div class="payment-option">
+                  <span class="payment-icon">📱</span>
+                  <span>PIX</span>
+                </div>
+              </label>
+            </div>
+
+            <div id="cardPaymentForm">
+              <div class="form-grid">
+                <div class="form-group full-width">
+                  <label for="cardNumber">Número do Cartão</label>
+                  <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                </div>
+                <div class="form-group full-width">
+                  <label for="cardName">Nome no Cartão</label>
+                  <input type="text" id="cardName" placeholder="NOME COMPLETO" required>
+                </div>
+                <div class="form-group">
+                  <label for="cardExpiry">Validade</label>
+                  <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5" required>
+                </div>
+                <div class="form-group">
+                  <label for="cardCvv">CVV</label>
+                  <input type="text" id="cardCvv" placeholder="123" maxlength="4" required>
+                </div>
+              </div>
+            </div>
+
+            <div id="pixPaymentForm" class="hidden">
+              <div class="pix-info">
+                <p>Após confirmar o pedido, você receberá um QR Code PIX para realizar o pagamento.</p>
+                <p>O pedido será processado assim que o pagamento for confirmado.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-summary">
+          <h3>Resumo do Pedido</h3>
+          <div id="checkoutSummaryContent">
+            <!-- Summary will be inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notification Container -->
+  <div id="notificationContainer"></div>
+
+  <!-- Modal Container -->
+  <div id="modalContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
